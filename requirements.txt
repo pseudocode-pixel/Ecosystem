@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 streamlit
 yfinance
 pandas
 numpy
 plotly
+=======
+streamlit
+yfinance
+pandas
+numpy
+plotly
+>>>>>>> f797e1efd15c0f8ca1dd4847209887ab5909fe18
