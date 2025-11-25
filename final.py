@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import streamlit as st
 
 st.set_page_config(page_title="Ecosystem Simulator", layout="wide")
@@ -542,4 +542,4 @@ with kpi_placeholder.container():
     with k4:
         st.metric("📉 Max concession", f"{concession_bps:,.0f} bps")
         st.caption(f"Rate: {lending_rate*100:.2f}% → {new_rate*100:.2f}%")
->>>>>>> f797e1efd15c0f8ca1dd4847209887ab5909fe18
+
