@@ -232,13 +232,13 @@ employees_on_us = employees * salary_penetration
 casa_balance_cr = employees_on_us * avg_balance / 1e7
 casa_nii_cr = casa_balance_cr * casa_spread
 
-retail_customers = employees * retail_take_up
+retail_customers = employees_on_us * retail_take_up
 retail_book_cr = retail_customers * retail_amount / 1e7
 retail_nii_cr = retail_book_cr * (retail_yield - retail_cost)
 retail_fee_cr = retail_book_cr * retail_fee_pct
 
-insurance_income_cr = employees * ins_penetration * ins_income_per_emp / 1e7
-wealth_income_cr = employees * wealth_penetration * wealth_income_per_emp / 1e7
+insurance_income_cr = employees_on_us * ins_penetration * ins_income_per_emp / 1e7
+wealth_income_cr = employees_on_us * wealth_penetration * wealth_income_per_emp / 1e7
 
 scenario2_revenue_cr = (
     scenario1_revenue_cr
@@ -249,7 +249,7 @@ scenario2_revenue_cr = (
     + wealth_income_cr
     + cms_income_cr
 )
-subsidy_share = st.slider("Useable ecosystem income (%)", 10, 80, 35, 5) / 100.0
+subsidy_share = st.slider("Useable ecosystem income (%)", 0, 100, 100, 5) / 100.0
 incremental_revenue_cr = scenario2_revenue_cr - scenario1_revenue_cr
 concession_pct = (incremental_revenue_cr * subsidy_share / anchor_loan_cr) if anchor_loan_cr > 0 else 0
 concession_bps = concession_pct * 10000
